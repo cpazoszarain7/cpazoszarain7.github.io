@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mini Project - Fraud Detection</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/test2.png" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Carlos Pazos</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/carlospazoszarain/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/cpazoszarain7" class="iconify" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="mailto:cpazoszarain@gmail.com" class="iconify" target="_blank"><i class="bx bxs-envelope"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="index.html#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Detecting Fraud</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Detecting Fraud</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      
+
+      <div class="container">
+        <div class="row">
+            <div class="p5 text-center">
+              <h1 class="mb-3">Mini Project: Detecting Fraud</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col portfolio-description">
+              <h2>The Goal</h2>
+              <p>In this mini project we are going to explore how we can use credit approval data from a financial institution to gain insights on potential fraud in credit applications. We will use a simulated dataset to explore how deep learning algorithms can be used to find similarities in credit applications so we can focus on groups of customers that might require our attention. Specifically, our goal is to use historical data from previous credit applications to infer entries that might have been fraudulent and use this information to detect potential future fraud.</p>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col portfolio-description">
+            <h2>The Data</h2>
+            <p>This is a fairly small dataset with 690 observations of customers from a financial institution and 14 features
+               that are obfuscated, but may include information on credit score, services used, income, tenancy, and other demographic
+                information. The dataset already has historical information on credit approvals encoded in the Class column [ 1 for
+                 Approved and 0 for Denied]. This dataset was taken from the course materials offered by <a href="https://www.superdatascience.com/">Super Data Science</a>.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <div class='table-responsive'>
+              <table class="table table-responsive table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">CustomerID</th>
+                    <th scope="col">A1</th>
+                    <th scope="col">A2</th>
+                    <th scope="col">A3</th>
+                    <th scope="col">A4</th>
+                    <th scope="col">A5</th>
+                    <th scope="col">A6</th>
+                    <th scope="col">A7</th>
+                    <th scope="col">A8</th>
+                    <th scope="col">A9</th>
+                    <th scope="col">A10</th>
+                    <th scope="col">A11</th>
+                    <th scope="col">A12</th>
+                    <th scope="col">A13</th>
+                    <th scope="col">A14</th>
+                    <th scope="col">Class</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15776156</td>
+                    <td>1</td>
+                    <td>22.08</td>
+                    <td>11.46</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1.585</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>100</td>
+                    <td>1213</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15739548</td>
+                    <td>0</td>
+                    <td>22.67</td>
+                    <td>7.00</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>0.165</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>160</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15662854</td>
+                    <td>0</td>
+                    <td>29.58</td>
+                    <td>1.75</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>1.250</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>280</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15687688</td>
+                    <td>0</td>
+                    <td>21.67</td>
+                    <td>11.50</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>0.000</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td class='table-warning'>1</td>
+                  </tr>
+                  <tr>
+                    <td>15715750</td>
+                    <td>1</td>
+                    <td>20.17</td>
+                    <td>8.17</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>1.960</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>14</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>60</td>
+                    <td>159</td>
+                    <td class='table-warning'>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col portfolio-description">
+            <h2>Approach</h2>
+            <p>Now to start exploring our data we will make use of Self Organizing Maps. This deep learning approach will allow us to 
+              cluster the data in such a way that we can find similarities in our list of customers. This map is essentially encoding 
+              the 14 characteristics of each of our customers, and it is plotting them in a 2D representation. The coloring in the map 
+              represents the distance from neurons or nodes (in our case hexagons) with respect from the surrounding neurons. In this case 
+              the bigger the distance (closer to 1 or red color) the more dissimilar that neuron is from its neighbors. Each of our 
+              customers has been mapped to each of these neurons and we have also overlaid the status approval for each customer with a 
+              green square for approved credits and a red circle for rejected applications.</p>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class='overflow-auto'>
+            <div class="col text-center" id="chart"></div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col portfolio-description">
+            <h2>Observations</h2>
+            <p>One first thing to notice is that we have a particular neuron or section of the map that with a distance value close to 1 
+              or in dark red color. This indicates that the collection of customers mapped to this region of the map are quite distinct 
+              from their neighbors. We have 18 customers in that section of the map from which 16 were rejected. This give us an indication 
+              that 2 of those customers should be further evaluated to better understand why their credits got approved [CustomerIDs 15692408 
+              and 15736510].</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <div class='table-responsive'>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">CustomerID</th>
+                    <th scope="col">A1</th>
+                    <th scope="col">A2</th>
+                    <th scope="col">A3</th>
+                    <th scope="col">A4</th>
+                    <th scope="col">A5</th>
+                    <th scope="col">A6</th>
+                    <th scope="col">A7</th>
+                    <th scope="col">A8</th>
+                    <th scope="col">A9</th>
+                    <th scope="col">A10</th>
+                    <th scope="col">A11</th>
+                    <th scope="col">A12</th>
+                    <th scope="col">A13</th>
+                    <th scope="col">A14</th>
+                    <th scope="col">Class</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15726466</td>
+                    <td>1</td>
+                    <td>17.42</td>
+                    <td>6.5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>0.125</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>60</td>
+                    <td>101</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr class='table-danger'>
+                    <td>15692408</td>
+                    <td>1</td>
+                    <td>48.08</td>
+                    <td>6.040</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0.040</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>2691</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>15667451</td>
+                    <td>1</td>
+                    <td>39.92</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>0.210</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>550</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15763108</td>
+                    <td>1</td>
+                    <td>28.67</td>
+                    <td>14.5</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>0.125</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>287</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15723989</td>
+                    <td>1</td>
+                    <td>22.25</td>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>0.085</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15704509</td>
+                    <td>1</td>
+                    <td>24.58</td>
+                    <td>13.5</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>184</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15730287</td>
+                    <td>1</td>
+                    <td>36.17</td>
+                    <td>5.5</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>5.000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>210</td>
+                    <td>688</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15720353</td>
+                    <td>1</td>
+                    <td>19.50</td>
+                    <td>0.290</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0.290</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>280</td>
+                    <td>365</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15728906</td>
+                    <td>1</td>
+                    <td>29.25</td>
+                    <td>13.00</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>8</td>
+                    <td>0.500</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>228</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr class='table-danger'>
+                    <td>15736510</td>
+                    <td>1</td>
+                    <td>41.50</td>
+                    <td>1.540</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>3.500</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>216</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>15708236</td>
+                    <td>1</td>
+                    <td>18.58</td>
+                    <td>5.710</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>0.540</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>120</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15736420</td>
+                    <td>1</td>
+                    <td>22.08</td>
+                    <td>2.335</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0.750</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>180</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15765093</td>
+                    <td>1</td>
+                    <td>31.57</td>
+                    <td>0.625</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0.250</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>380</td>
+                    <td>2011</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15632275</td>
+                    <td>1</td>
+                    <td>22.67</td>
+                    <td>11.50</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>0.415</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15737542</td>
+                    <td>1</td>
+                    <td>33.75</td>
+                    <td>2.750</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>0.000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>180</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15748691</td>
+                    <td>1</td>
+                    <td>36.08</td>
+                    <td>2.540</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0.000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>1001</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15748986</td>
+                    <td>1</td>
+                    <td>48.08</td>
+                    <td>3.750</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>1.000</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>100</td>
+                    <td>3</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                  <tr>
+                    <td>15727811</td>
+                    <td>1</td>
+                    <td>18.58</td>
+                    <td>10.290</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0.415</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>80</td>
+                    <td>1</td>
+                    <td class='table-warning'>0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col portfolio-description">
+            <h2>Additional Exploration</h2>
+            <p>So how we can take this experiment further? Now we can use our map to create a model 
+              that will allow us to predict the approval of future credit applications and plot them 
+              on the map to assess the risk of those applications.</p>
+
+            <p>Below is the model performance of our classifier that uses the <a href="https://github.com/JustGlowing/minisom">MiniSom</a> library.</p>
+                       
+          </div>
+        </div>
+        <div class='container px-5'>
+          <div class="row gx-5 p-2">
+            <div class='col-md-3 p-5 bg-light d-flex align-items-center justify-content-center'>             
+                                
+                  <p><span class="fw-bold fs-5">SOM Classifier</span><br>
+                  <span class="fw-bold">Map Lattice:</span> 10x10<br>
+                  <span class="fw-bold">Sigma:</span> 1.5<br>
+                  <span class="fw-bold">Learning Rate:</span> 0.7<br>
+                  <span class="fw-bold">Topology:</span> Hexagonal<br>
+                  <span class="fw-bold">Iterations:</span> 500</p> 
+                              
+            </div>
+
+            <div class='col-md-8 p-3'>
+              <div class='table-responsive'>
+                <table class="table table-sm table-hover">
+                  <thead>
+                    <tr>
+                      <th style="width: 15%" scope="col"></th>
+                      <th style="width: 21.25%" class='text-center' scope="col">precision</th>
+                      <th style="width: 21.25%" class='text-center' scope="col">recall</th>
+                      <th style="width: 21.25%" class='text-center' scope="col">f1-score</th>
+                      <th style="width: 21.25%" class='text-center' scope="col">support</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class='text-end'>0</td>
+                      <td class='text-center'>0.82</td>
+                      <td class='text-center'>0.82</td>
+                      <td class='text-center'>0.82</td>
+                      <td class='text-center'>122</td>
+                    </tr>
+                    <tr>
+                      <td class='text-end'>1</td>
+                      <td class='text-center'>0.74</td>
+                      <td class='text-center'>0.74</td>
+                      <td class='text-center'>0.74</td>
+                      <td class='text-center'>85</td>
+                    </tr>
+                    <tr>
+                      <td class='text-end'></td>
+                      <td class='text-center'></td>
+                      <td class='text-center'></td>
+                      <td class='text-center'></td>
+                      <td class='text-center'></td>
+                    </tr>
+                    <tr>
+                      <td class='text-end'>accuracy</td>
+                      <td class='text-center'></td>
+                      <td class='text-center'></td>
+                      <td class="table-success text-center">0.79</td>
+                      <td class='text-center'>207</td>
+                    </tr>
+                    <tr>
+                      <td class='text-end'>macro avg</td>
+                      <td class='text-center'>0.78</td>
+                      <td class='text-center'>0.78</td>
+                      <td class='text-center'>0.78</td>
+                      <td class='text-center'>207</td>
+                    </tr>
+                    <tr>
+                      <td class='text-end'>weighted avg</td>
+                      <td class='text-center'>0.79</td>
+                      <td class='text-center'>0.79</td>
+                      <td class='text-center'>0.79</td>
+                      <td class='text-center'>207</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Project Specific Scripts -->
+  <script src="https://d3js.org/d3.v4.0.0-alpha.44.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.hexbin.v0.min.js"></script>	
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.js"></script>
+  <script src="assets/js/hexagons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+
+</html>
